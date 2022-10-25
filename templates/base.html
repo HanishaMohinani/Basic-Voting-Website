@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<style>
+		*{font-size:40px; font-family:courier;}
+		#nav{background-color:black;}
+		#nav a{color:white;text decoration:none;padding:30px;}
+		body{background-color:#D99879;}
+	</style>
+	<meta name="viewport content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+<center>
+	<div id ="nav">
+		<a href="{% url 'home' %}">Home</a>
+		<a href="{% url 'create' %}">Create</a>
+	</div>
+	{% block content %}{% endblock %}
+</center>
+</body>
+</html>
