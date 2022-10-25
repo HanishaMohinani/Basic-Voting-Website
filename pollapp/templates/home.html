@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Home Page {% endblock %}
+
+{% block content %}
+<h1> Available Polls </h1>
+
+{% for d in data %}
+	<h2>{{ d.question }}</h2>
+	<a href="{% url 'vote' d.id %}" style="padding:30px; text-decoration:none;color:#BA135D;">Vote</a>
+	<a href="{% url 'results' d.id %}" style="text-decoration:none;color:#BA135D;">View Results</a>
+{% empty %}
+	<h2>No Available Polls</h2>
+{% endfor %}
+
+{% endblock %}
